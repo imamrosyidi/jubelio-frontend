@@ -1,0 +1,35 @@
+.card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: fit-content;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  img {
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .name {
+    font-weight: 600;
+    font-size: 23px;
+    padding-inline: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+  .price {
+    text-align: center;
+    padding-inline: 10px;
+    color: red;
+  }
+}
+
+.card:hover {
+  cursor: pointer;
+  border: 2px solid blue;
+}

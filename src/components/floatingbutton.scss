@@ -1,0 +1,22 @@
+.floatingbutton {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(26, 133, 106),
+    rgb(0, 16, 134)
+  );
+  font-size: 20px;
+  font-weight: 500;
+  padding-block: 5px;
+  padding-inline: 15px;
+  border-radius: 20px;
+  color: white;
+  border: 2px solid rgb(39, 251, 177);
+}
+
+.floatingbutton:hover {
+  cursor: pointer;
+  border: 3px solid rgb(119, 254, 207);
+}
