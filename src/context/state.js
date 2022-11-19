@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx";
 import axios from "axios";
 
 class myState {
-  offset = 1;
+  offset = 0;
   listPorudcts = [];
   details = {};
   isDetailOpen = false;
@@ -65,6 +65,22 @@ class myState {
       .then((err) => {
         console.log(err);
       });
+  }
+
+  //updated list without fetching
+  updateListProduct(id, newdata) {
+    const lp = this.listPorudcts;
+    for (var i = 0; i < lp.length; i += 1) {
+      if (lp[i]["id"] === id) {
+        this.listPorudcts[i] = newdata;
+      }
+    }
+  }
+  deleteListProduct(id) {
+    const lp = this.listPorudcts;
+    const filtered = lp.filter((value) => value["id"] != id);
+    this.listPorudcts = filtered;
+    this.isDetailOpen = false;
   }
 }
 

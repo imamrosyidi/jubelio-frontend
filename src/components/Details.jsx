@@ -7,7 +7,7 @@ import axios from "axios";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
-export default function Details({ data }) {
+export default function Details({ data, deleteList, updateList }) {
   const [isEditMode, setIsEditMode] = useState(false);
   const [isLoading, setisLoading] = useState(false);
   const [cdata, setcdata] = useState(data);
@@ -22,6 +22,7 @@ export default function Details({ data }) {
       })
       .then((_) => {
         alert("berhasil");
+        updateList(cdata.id, cdata);
       })
       .catch((err) => alert("Gagal"));
     setisLoading(false);
@@ -32,6 +33,7 @@ export default function Details({ data }) {
       .delete(process.env.REACT_APP_API_URL + `product/${cdata.id}`)
       .then((_) => {
         alert("berhasil");
+        deleteList();
       })
       .catch((err) => alert("Gagal"));
     setisLoading(false);

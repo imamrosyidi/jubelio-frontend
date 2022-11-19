@@ -18,6 +18,7 @@ const MainPage = observer(() => {
   useEffect(() => {
     myst.setlistPorudcts();
   }, []);
+
   const onScroll = (event) => {
     const target = event.target;
     console.log(
@@ -62,7 +63,11 @@ const MainPage = observer(() => {
           myst.setisdetailOpen(false);
         }}
       >
-        <Details data={myst.details}></Details>
+        <Details
+          data={myst.details}
+          deleteList={() => myst.deleteListProduct(myst.details.id)}
+          updateList={(id, newdata) => myst.updateListProduct(id, newdata)}
+        ></Details>
       </Dialog>
       <Dialog
         open={myst.isAddProductOpen}
